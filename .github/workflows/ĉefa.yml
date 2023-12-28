@@ -16,13 +16,13 @@ jobs:
       - run: sudo sed -i 's/^\(.*policy.*domain.*coder.*rights.*\)none\(.*pattern.*PDF.*\)$/\1read|write\2/' /etc/ImageMagick-6/policy.xml
       - run: cat /etc/ImageMagick-6/policy.xml
       - run: make
-      - run: ls -l Esperanto.mp4
+      - run: tar ztvf Esperanto.mp4.tar.gz Esperanto.mp4
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'Esperanto.mp4'
+          path: 'Esperanto.mp4.tar.gz'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
