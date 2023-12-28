@@ -17,4 +17,6 @@ jobs:
       - run: make
       - run: find .
         if: always()
+      - run: dpkg -l | grep -i image
+        if: always()
 
