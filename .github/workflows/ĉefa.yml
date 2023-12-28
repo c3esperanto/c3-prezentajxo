@@ -17,6 +17,7 @@ jobs:
       - run: make
       - run: find .
         if: always()
-      - run: dpkg -l | grep -i image
+      - run: ls -l PDF
         if: always()
+
 
