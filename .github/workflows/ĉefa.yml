@@ -16,4 +16,5 @@ jobs:
       - run: sudo sed -i '/policy.*domain.*coder.*rights.*none.*pattern.*PDF/d' /etc/ImageMagick-6/policy.xml
       - run: make
       - run: find .
+        if: always()
 
