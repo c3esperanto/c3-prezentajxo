@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
+      - run: sudo mount -t tmpfs none /tmp
       - run: ls -l /
       - run: df -h
       - run: sudo apt-get update
