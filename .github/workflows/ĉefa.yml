@@ -12,14 +12,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: sudo mount -t tmpfs none /tmp
-      - run: ls -l /
-      - run: df -h
       - run: sudo apt-get update
-      - run: sudo DEBIAN_FRONTEND=noninteractive apt-get install -y ffmpeg default-jre libreoffice-java-common libreoffice-impress strace ghostscript
+      - run: sudo DEBIAN_FRONTEND=noninteractive apt-get install -y ffmpeg default-jre libreoffice-java-common libreoffice-impress ghostscript
       - run: sudo sed -i 's/^\(.*policy.*domain.*coder.*rights.*\)none\(.*pattern.*PDF.*\)$/\1read|write\2/' /etc/ImageMagick-6/policy.xml
       - run: cat /etc/ImageMagick-6/policy.xml
-      - run: strace -f make
+      - run: make
       - run: find .
-        if: always()
-      - run: ls -l PDF
         if: always()
