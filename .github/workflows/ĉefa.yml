@@ -21,6 +21,7 @@ jobs:
       - run: make
       - run: mkdir info-beamer
       - run: mv Esperanto.mp4 info-beamer/
+      - run: touch info-beamer/index.html
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
