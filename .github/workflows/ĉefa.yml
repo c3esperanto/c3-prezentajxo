@@ -14,5 +14,6 @@ jobs:
       - run: sudo apt-get update
       - run: sudo DEBIAN_FRONTEND=noninteractive apt-get install -y ffmpeg libreoffice-impress imagemagick
       - run: sudo sed -i '/policy.*domain.*coder.*rights.*none.*pattern.*PDF/d' /etc/ImageMagick-6/policy.xml
-      - run: find .
       - run: make
+      - run: find .
+
