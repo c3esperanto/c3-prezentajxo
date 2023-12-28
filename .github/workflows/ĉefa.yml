@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
+      - run: ls -l /
       - run: df -h
       - run: sudo apt-get update
       - run: sudo DEBIAN_FRONTEND=noninteractive apt-get install -y ffmpeg default-jre libreoffice-java-common libreoffice-impress
