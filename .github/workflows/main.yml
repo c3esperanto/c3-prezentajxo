@@ -1,0 +1,15 @@
+name: konverti prezentaĵon al filmo
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  konverto:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - run: sudo DEBIAN_FRONTEND=noninteractive apt-get install -y ffmpeg libreoffice-impress imagemagick
+      - run: make
