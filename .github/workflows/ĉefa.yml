@@ -17,3 +17,12 @@ jobs:
       - run: cat /etc/ImageMagick-6/policy.xml
       - run: make
       - run: ls -l Esperanto.mp4
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'Esperanto.mp4'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
