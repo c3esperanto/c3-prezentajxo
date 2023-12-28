@@ -16,13 +16,14 @@ jobs:
       - run: sudo sed -i 's/^\(.*policy.*domain.*coder.*rights.*\)none\(.*pattern.*PDF.*\)$/\1read|write\2/' /etc/ImageMagick-6/policy.xml
       - run: cat /etc/ImageMagick-6/policy.xml
       - run: make
-      - run: tar zcvf Esperanto.mp4.tar.gz Esperanto.mp4
+      - run: mkdir info-beamer
+      - run: mv Esperanto.mp4 info-beamer/
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'Esperanto.mp4.tar.gz'
+          path: 'info-beamer'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
