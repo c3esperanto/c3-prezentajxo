@@ -15,9 +15,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: sudo apt-get update
-      - run: sudo DEBIAN_FRONTEND=noninteractive apt-get install -y ffmpeg default-jre libreoffice-java-common libreoffice-impress ghostscript
-      - run: sudo sed -i 's/^\(.*policy.*domain.*coder.*rights.*\)none\(.*pattern.*PDF.*\)$/\1read|write\2/' /etc/ImageMagick-6/policy.xml
-      - run: cat /etc/ImageMagick-6/policy.xml
+      - name: Instalu bezonatajn pakaĵojn
+        run: sudo DEBIAN_FRONTEND=noninteractive apt-get install -y ffmpeg default-jre libreoffice-java-common libreoffice-impress ghostscript
+      - name: Permesi PDF operaciojn en Imagemagick
+        run: sudo sed -i 's/^\(.*policy.*domain.*coder.*rights.*\)none\(.*pattern.*PDF.*\)$/\1read|write\2/' /etc/ImageMagick-6/policy.xml
+      - name: Montru la redaktitajn Imagemagick agordojn
+        run: cat /etc/ImageMagick-6/policy.xml
       - run: make
       - run: mkdir info-beamer
       - run: mv Esperanto.mp4 info-beamer/
@@ -25,12 +28,12 @@ jobs:
         uses: jayanta525/github-pages-directory-listing@v4.0.0
         with:
           FOLDER: info-beamer
-      - name: Setup Pages
+      - name: Agordi github paĝojn
         uses: actions/configure-pages@v4
-      - name: Upload artifact
+      - name: Deponigi la paĝon kiel artefakto
         uses: actions/upload-pages-artifact@v3
         with:
           path: 'info-beamer'
-      - name: Deploy to GitHub Pages
+      - name: Enretigi kiel github-paĝoj
         id: deployment
         uses: actions/deploy-pages@v4

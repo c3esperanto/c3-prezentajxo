@@ -1,2 +1,3 @@
 1. deponigu novan dosieron *Esperanto.odp*
-1. video aperos ĉe: [https://c3esperanto.github.io/c3-prezentajxo/Esperanto.mp4](https://c3esperanto.github.io/c3-prezentajxo/Esperanto.mp4)
+1. attendu...
+1. video aperos ĉe: [https://c3esperanto.github.io/c3-prezentajxo/](https://c3esperanto.github.io/c3-prezentajxo/)
